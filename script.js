@@ -4,6 +4,8 @@ let gameFinished = true;
 let scorePlayerX = 0;
 let scorePlayerO = 0;
 let scoreDraw = 0;
+const cells = document.querySelectorAll('.cell');
+cells.forEach(cell => cell.addEventListener('click', processingCellClick));
 
 function startGame() {
     board = ['', '', '', '', '', '', '', '', ''];
@@ -98,10 +100,3 @@ function resetGame() {
         startGame();
     }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const cells = document.querySelectorAll('.cell');
-    for (let i = 0; i < cells.length; ++i) {
-        cells[i].addEventListener('click', processingCellClick);
-    }
-});
